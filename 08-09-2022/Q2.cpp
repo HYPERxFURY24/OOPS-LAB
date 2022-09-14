@@ -11,7 +11,11 @@ class employee
     string name,dep;
     int id, salary;
     public:
-    employee(){};
+    employee()
+    {
+        cout << "Enter id, name, department name & salary respectively :" << endl;
+        cin >> id >> name >> dep >> salary;
+    }
     employee(int x, string s, string dept, int sal)
     {
         id = x;
