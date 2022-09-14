@@ -10,7 +10,7 @@ using namespace std;
 
 class employee
 {
-    string name;
+    char *name{};
     int age;
     int id;
     string dept;
@@ -18,13 +18,32 @@ class employee
     public :
     employee()
     {
+        name = new char;
         cout << "Enter ID, Name, Age, Department name and Salary respectively :" << endl;
         cin >> id >> name >> age >> dept >> salary; 
+    }
+    employee(int n)
+    {
+        name = new char[n];
+        cout << "Enter ID, Name, Age, Department name and Salary respectively :" << endl;
+        cin >> id >> name >> age >> dept >> salary; 
+    }
+    void show()
+    {
+        cout << "ID = " << id << "\tName = " << name << "\tAge = " << age << endl;
+        cout << "Department = " << dept << endl;
+        cout << "Salary = " << salary << endl;
     }
 };
 
 int main()
 {
-    employee e[2];
+    employee e1;
+    int n;
+    cout << "Enter the no. of characters in the name of employee : ";
+    cin >> n;
+    employee e2(n);
+    e1.show();
+    e2.show();
     return 0;
 }
