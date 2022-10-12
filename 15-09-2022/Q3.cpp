@@ -56,7 +56,7 @@ a class from employee in private mode. having department name and department id 
         cin >> basic_pay;
         cout << "Enter grade (a or b) : ";
         cin >> grade;
-        while(grade != 'a' || grade != 'b')
+        while(grade != 'a' && grade != 'b')
         {
             cout << "Enter valid grade : ";
             cin >> grade;
