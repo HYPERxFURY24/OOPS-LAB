@@ -7,3 +7,46 @@ necessary conversion function & display the length in feet & inches.
 (Hints: Use all the constructors & destructors.)
  */
 
+#include <iostream>
+using namespace std;
+
+class length
+{
+    int feet;
+    double inches;
+    public :
+    length()
+    {
+        cout << "Enter length (in inches) : " ;
+        cin >> inches;
+        feet = 0;
+    }
+    length(double x)
+    {
+        feet = x;
+        inches = (x-feet)*12;
+    }
+    ~length()
+    {
+        cout << "Destructed!" << endl;
+    }
+    void show()
+    {
+        cout << "Feet : " << feet << "\tInches : " << inches << endl;
+    }
+    operator double()
+    {
+        return inches/12.0;
+    }
+};
+
+int main()
+{
+    length l;
+    l.show();
+    double d = l;
+    cout << "Length in feet : " << d << endl;
+    l = d;
+    l.show();
+    return 0;
+}
