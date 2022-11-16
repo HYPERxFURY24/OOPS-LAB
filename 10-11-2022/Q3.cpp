@@ -19,9 +19,9 @@ int main()
     {
         in.get(ch);
         if(ch == ' ' || ch == '.')
-        words++;
+            words++;
         if(ch == '.')
-        sen++;
+            sen++;
     }
     cout << "Words : " << words << endl;
     cout << "Sentence : " << sen << endl;
